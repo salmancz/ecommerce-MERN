@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema(
       max: 20,
       trim: true,
     },
-    username: {
+    email: {
       type: String,
       required: true,
       unique: true,
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
-    email: {
+    userName: {
       type: String,
       required: true,
       trim: true,
