@@ -13,18 +13,19 @@ exports.signup = (req, res) => {
       lastName,
       email,
       password,
-      userName: Math.random().toString(),
+      username: Math.random().toString(),
     });
 
     _user.save((error, data) => {
-      if (data) {
-        return res.status(201).json({
-          message: "User created successfully",
-        });
-      }
       if (error) {
         return res.status(400).json({
-          message: error,
+          message: "Something went wrong",
+        });
+      }
+
+      if (data) {
+        return res.status(201).json({
+          message: "User created Successfully..!",
         });
       }
     });
